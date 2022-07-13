@@ -1,0 +1,51 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+		 "path": "pages/list/list",
+		 "style" : {
+			 "enablePullDownRefresh": true,
+			 "navigationBarTitleText": "yoga",//顶部名称
+			 "navigationBarBackgroundColor": "#eb4450",//顶部背景色
+			 "navigationBarTextStyle": "white" //文字颜色，目前只支持white和black这两种颜色（小程序）
+		 }
+		},
+		{
+		 "path": "pages/ucenter/ucenter",
+		 "style" : {
+		 	 "enablePullDownRefresh": true,
+		 	 "navigationBarTitleText": "yoga",//顶部名称
+		 	 "navigationBarBackgroundColor": "#eb4450",//顶部背景色
+		 	 "navigationBarTextStyle": "white" //文字颜色，目前只支持white和black这两种颜色（小程序）
+		 }
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-starter",
+		"navigationBarBackgroundColor": "#FFFFFF",
+		"backgroundColor": "#F8F8F8",
+		"enablePullDownRefresh": false,
+		// "maxWidth":375,
+		"rpxCalcMaxDeviceWidth":375,
+		"rpxCalcBaseDeviceWidth":375
+		// "rpxCalcIncludeWidth":0
+	},
+	"tabBar": {
+	 "color": "#7A7E83",
+	 "selectedColor": "#007AFF",
+	 "borderStyle": "black",
+	 "backgroundColor": "#FFFFFF",
+	 "list": [{
+	  "pagePath": "pages/list/list",
+	  "iconPath": "static/tabbar/list.png",
+	  "selectedIconPath": "static/tabbar/list_active.png",
+	  "text": "列表"
+	 },{
+	  "pagePath": "pages/ucenter/ucenter",
+	  "iconPath": "static/tabbar/me.png",
+	  "selectedIconPath": "static/tabbar/me_active.png",
+	  "text": "我的"
+	 }]
+	},
+	"uniIdRouter": {}
+}

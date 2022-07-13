@@ -1,0 +1,76 @@
+<template>
+	<view class="center">
+		<!-- #ifndef H5 -->
+		<statusBar></statusBar>
+		<!-- #endif -->
+		<view>
+			<text class="title">个人中心</text>
+		</view>
+	</view>
+</template>
+
+<script>
+	let cdbRef;
+	import statusBar from "@/uni_modules/uni-nav-bar/components/uni-nav-bar/uni-status-bar";
+
+	export default {
+		components: {
+			statusBar
+		},
+		computed: {
+			
+		},
+		data() {
+			return {
+				listHight: 0
+			}
+		},
+		watch: {
+			keyword(keyword, oldValue) {
+				let where = '"article_status" == 1 '
+				if (keyword) {
+					this.where = where + `&& /${keyword}/.test(title)`;
+				} else {
+					this.where = where;
+				}
+			}
+		},
+		async onReady() {
+			// #ifdef APP-NVUE
+			/* 可用窗口高度 - 搜索框高 - 状态栏高 */
+			this.listHight = uni.getSystemInfoSync().windowHeight - uni.getSystemInfoSync().statusBarHeight - 50 + 'px';
+			// #endif
+			// #ifndef APP-NVUE
+			this.listHight = 'auto'
+			// #endif
+			cdbRef = this.$refs.udb
+		},
+		async onShow() {
+			
+		},
+		methods: {
+
+		},
+		// #ifndef APP-NVUE
+		onPullDownRefresh() {
+			
+		},
+		onReachBottom() {
+			
+		}
+		// #endif
+	}
+</script>
+
+<style scoped>
+	/* #ifndef APP-NVUE */
+	view {
+		display: flex;
+		box-sizing: border-box;
+		flex-direction: column;
+	}
+	/* #endif */
+	.pages {
+		background-color: #FFFFFF;
+	}
+</style>
